@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div">
+
+    <first></first>
+
+</div>
+
+<script src="js/vue.min.js"></script>
+<script>
+
+    let first = {
+        template:`
+        <div>这是我的分页组件
+            <button @click="change">点我</button>
+            <div>我是嵌套的div{{count}}</div>
+        </div>
+        `,
+        data: function (){
+            return {
+                count: 50,
+            }
+        },
+        methods: {
+            change() {
+                alert("111111")
+            }
+        },
+        created: function () {
+            //数据赋值完成后触发
+            alert("数据赋值完成了")
+        }
+    }
+
+    Vue.component('first', first)
+
+
+    new Vue({
+        el:"#div",
+        data:{},
+    })
+</script>
+
+</body>
+</html>

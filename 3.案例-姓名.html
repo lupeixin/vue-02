@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+    姓：<input type="text" v-model="x">
+    名：<input type="text" v-model="m">
+    <p>全名：{{allName}}</p>
+    <hr>
+    姓名：<input type="text" v-model="name">
+    <p>姓：{{xi}}</p>
+    <p>名：{{mi}}</p>
+
+
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data:{
+            x: '',
+            m: '',
+
+            name: '',
+            xi: '',
+            mi: '',
+
+        },
+        computed:{
+            allName(){
+                return this.x + this.m;
+            }
+        },
+        watch:{
+            name(){
+                let name1 = this.name.split(' ');
+                this.xi = name1[0];
+                this.mi = name1[1];
+            }
+        }
+
+    })
+</script>
+</body>
+</html>

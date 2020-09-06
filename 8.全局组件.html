@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div">
+
+    <dim></dim>
+    <dim></dim>
+    <dim></dim>
+
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    //1.组件的定义： 组件就是一个普通的js对象
+    let dim = {
+        template: `
+        <div>这是我的第一个组件</div>
+        `,
+    }
+    //2.组件的注册 全局注册 局部注册
+    // 全局组件：Vue.component('组件注册后的名称', '组件对象')
+
+    Vue.component('dim', dim)
+
+    new Vue({
+        el:"#div",
+        data:{
+
+        },
+    })
+</script>
+</body>
+</html>

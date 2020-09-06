@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+    <p @click="change">{{num}}</p>
+    <p>十位：{{s}}</p>
+    <p>个位：{{g}}</p>
+
+
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            num: 99,
+            s: '',
+            g: '',
+        },
+        methods:{
+            change() {
+                this.num -= 3;
+            }
+        },
+        watch:{
+            num(){
+                this.s = parseInt(this.num / 10)
+                this.g = this.num % 10;
+            }
+        }
+    })
+</script>
+</body>
+</html>

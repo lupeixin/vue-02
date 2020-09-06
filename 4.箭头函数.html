@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div"></div>
+<script src="js/vue.min.js"></script>
+<script>
+    //正常函数
+    function sum(a,b){
+        console.log(a + b);
+    }
+    sum(1, 2)
+    //匿名函数
+    let sums = function (a, b, c){
+        console.log(a+b*c);
+    }
+    sums(1,2,3)
+    //箭头函数就是匿名函数写法的简化
+    let sum1 = (a, b, c) => console.log(a+b*c);
+    sum1(1,2,3)
+
+    let sum2 = function (a,b){
+        console.log(a+b);
+        console.log(a*b);
+    }
+    sum2(1,2)
+
+    let sum3 = (a, b) => {
+        console.log(a%b);
+        console.log(a-b);
+    }
+    sum3(10, 3)
+
+
+
+</script>
+</body>
+</html>

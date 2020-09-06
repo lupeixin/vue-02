@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div">
+    <com></com>
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    //组件中的data是一个函数，但是绝对不能写成箭头函数
+    //除了data的定义方式，其余与vue实例中的data并没有任何不同
+    //组件间的数据是相互隔离的 互不影响
+    let com = {
+        template: `
+        <div>这是一个组件
+        <br>
+        <span>这是组件中的data：{{username}}</span>
+        </div>
+        `,
+        data: function (){
+            return{
+                username: "小王",
+            }
+        }
+    }
+
+    Vue.component('com', com)
+
+
+    new Vue({
+        el: '#div',
+        data: {
+            name: '小明',
+        },
+    })
+
+
+
+</script>
+</body>
+</html>
